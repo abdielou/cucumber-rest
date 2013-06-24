@@ -40,8 +40,7 @@ public class StepDefs {
         this.uri = new URI(uri);
     }
 
-
-    @When("^I provide parameter \"([^\"]*)\" as \"([^\"]*)\"$")
+    @Given("^I provide parameter \"([^\"]*)\" as \"([^\"]*)\"$")
     public void I_provide_parameter_as(String param, String value) {
         System.out.println(param + "::" + value);
         if(param.equalsIgnoreCase("id"))

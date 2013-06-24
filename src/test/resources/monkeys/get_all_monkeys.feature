@@ -21,3 +21,15 @@ Feature: Get them Monkeys
     Then the status code should be 200
     And it should have the field "action" containing the value "chimp"
     And it should have the field "name"
+
+  Scenario Outline: find a monkey
+    Given I access the url "http://localhost:8080/api/0.1/monkeys"
+    And I provide parameter "id" as <search_id>
+    When I retrieve the results
+    Then the status code should be 200
+    And it should have the field "id" containing the value <monkey_id>
+
+    Examples:
+      | search_id |  monkey_id |
+      | "1"       |  "1"       |
+      | "2"       |  "2"       |
