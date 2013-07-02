@@ -11,13 +11,13 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class Monkey {
-    public String action = "chimp";
+    public String action;
     public String id;
-
-    public Monkey(){
-    }
+    public String name;
 
     public Monkey(String id){
         this.id = id;
+        this.action = "chimp";
+        this.name = "";
     }
 }
