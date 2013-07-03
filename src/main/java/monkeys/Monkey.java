@@ -1,6 +1,8 @@
 package monkeys;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * (C) Copyright 6/20/13 Hewlett-Packard Development Company, L.P.
@@ -9,15 +11,58 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author abdiel
  */
-@XmlRootElement
-public class Monkey {
-    public String action;
-    public String id;
-    public String name;
+@Entity
+@Table(name = "monkeys")
+@Access(AccessType.PROPERTY)
+public class Monkey implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-    public Monkey(String id){
-        this.id = id;
-        this.action = "chimp";
-        this.name = "";
+    @Access(AccessType.FIELD)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String name;
+
+    private List<Banana> bananas;
+
+    private String action = "chimp";
+
+    public Monkey() {
+    }
+
+    public Monkey(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    @Basic(optional = false)
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @OneToMany(mappedBy = "peeler", fetch = FetchType.EAGER)
+    public List<Banana> getBananas() {
+        return bananas;
+    }
+
+    public void setBananas(List<Banana> bananas) {
+        this.bananas = bananas;
+    }
+
+    @Basic(optional = true)
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
     }
 }
