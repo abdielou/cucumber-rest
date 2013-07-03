@@ -307,6 +307,14 @@
                         <type>installed</type>
                         <home>/usr/share/tomcat6</home>
                     </container>
+                    <deployables>
+                        <deployable>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <type>war</type>
+                        </deployable>
+                    </deployables>
+
                 </configuration>
             </plugin>
         </plugins>
