@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "bananas")
-@Access(AccessType.PROPERTY)
+@Access(AccessType.FIELD)
 public class Banana implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -19,8 +19,10 @@ public class Banana implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @ManyToOne(optional = false)
     private Monkey peeler;
 
+    @Basic(optional = false)
     private String description;
 
     public Banana() {
@@ -31,7 +33,6 @@ public class Banana implements Serializable {
         this.description = description;
     }
 
-    @ManyToOne(optional = false)
     public Monkey getPeeler() {
         return peeler;
     }
@@ -40,7 +41,6 @@ public class Banana implements Serializable {
         this.peeler = peeler;
     }
 
-    @Basic(optional = false)
     public String getDescription() {
         return description;
     }

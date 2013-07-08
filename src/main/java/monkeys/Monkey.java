@@ -1,5 +1,7 @@
 package monkeys;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "monkeys")
-@Access(AccessType.PROPERTY)
+@Access(AccessType.FIELD)
 public class Monkey implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -20,10 +22,14 @@ public class Monkey implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Basic(optional = false)
     private String name;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "peeler", fetch = FetchType.EAGER)
     private List<Banana> bananas;
 
+    @Basic(optional = true)
     private String action = "chimp";
 
     public Monkey() {
@@ -37,7 +43,6 @@ public class Monkey implements Serializable {
         return id;
     }
 
-    @Basic(optional = false)
     public String getName() {
         return name;
     }
@@ -46,7 +51,6 @@ public class Monkey implements Serializable {
         this.name = name;
     }
 
-    @OneToMany(mappedBy = "peeler", fetch = FetchType.EAGER)
     public List<Banana> getBananas() {
         return bananas;
     }
@@ -55,7 +59,6 @@ public class Monkey implements Serializable {
         this.bananas = bananas;
     }
 
-    @Basic(optional = true)
     public String getAction() {
         return action;
     }
