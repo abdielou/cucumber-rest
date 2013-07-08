@@ -9,6 +9,11 @@ import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
+/**
+ * MIT License
+ *
+ * @author abdiel
+ */
 @Configuration
 public class SpringMockFactory {
     @Autowired

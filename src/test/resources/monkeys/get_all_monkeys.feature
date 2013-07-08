@@ -1,6 +1,4 @@
 #   MIT License
-#   Date: 6/19/13
-#   Time: 5:14 PM
 #   Author: abdiel
 
 @txn

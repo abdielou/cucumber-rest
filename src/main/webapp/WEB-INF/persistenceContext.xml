@@ -45,7 +45,6 @@
     </bean>
 
     <tx:annotation-driven/>
-
     <jpa:repositories base-package="monkeys"/>
 
 </beans>

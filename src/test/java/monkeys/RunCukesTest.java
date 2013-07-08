@@ -2,8 +2,6 @@ package monkeys;
 
 /**
  * MIT License
- * Date: 6/19/13
- * Time: 5:08 PM
  *
  * @author abdiel
  */

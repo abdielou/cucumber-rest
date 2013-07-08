@@ -5,9 +5,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * (C) Copyright 6/20/13 Hewlett-Packard Development Company, L.P.
- * Date: 6/20/13
- * Time: 10:24 AM
+ * MIT License
  *
  * @author abdiel
  */

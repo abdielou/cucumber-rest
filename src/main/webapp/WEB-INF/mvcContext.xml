@@ -11,8 +11,8 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-    <context:component-scan base-package="monkeys"/>
-
     <mvc:annotation-driven/>
+
+    <context:component-scan base-package="monkeys"/>
 
 </beans>

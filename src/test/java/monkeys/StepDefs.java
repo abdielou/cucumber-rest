@@ -25,8 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * MIT License
- * Date: 6/19/13
- * Time: 5:09 PM
  *
  * @author abdiel
  */
