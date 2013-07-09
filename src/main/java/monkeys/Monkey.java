@@ -25,8 +25,7 @@ public class Monkey implements Serializable {
     @Basic(optional = false)
     private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "peeler", fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Banana> bananas;
 
     @Basic(optional = true)

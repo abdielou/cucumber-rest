@@ -51,8 +51,8 @@ public class StepDefs {
     public void The_monkey_named_has_bananas(String name, int count) throws Throwable {
         List<Monkey> monkeys = monkeyRepository.findByName(name);
         List<Banana> bananas = new ArrayList<Banana>();
-        bananas.add(new Banana(monkeys.get(0),"small")); // who cares?... just do the first
-        bananas.add(new Banana(monkeys.get(0),"smaller"));
+        bananas.add(new Banana("small"));
+        bananas.add(new Banana("smaller"));
         monkeys.get(0).setBananas(bananas);
     }
 

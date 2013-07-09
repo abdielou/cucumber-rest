@@ -19,26 +19,18 @@ public class Banana implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne(optional = false)
-    private Monkey peeler;
-
     @Basic(optional = false)
     private String description;
 
     public Banana() {
     }
 
-    public Banana(Monkey peeler, String description) {
-        this.peeler = peeler;
+    public Banana(String description) {
         this.description = description;
     }
 
-    public Monkey getPeeler() {
-        return peeler;
-    }
-
-    public void setPeeler(Monkey peeler) {
-        this.peeler = peeler;
+    public Long getId() {
+        return id;
     }
 
     public String getDescription() {
